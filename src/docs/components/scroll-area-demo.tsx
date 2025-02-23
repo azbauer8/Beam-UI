@@ -12,7 +12,7 @@ export function ScrollAreaDemo() {
           encompassing a wide range and variety of building types, with
           differing methods of construction, from around the world, both
           historical and extant and classical and modern. Vernacular
-          architecture constitutes 95% of the world's built environment, as
+          architecture constitutes 95% of the world&apos;s built environment, as
           estimated in 1995 by Amos Rapoport, as measured against the small
           percentage of new buildings every year designed by architects and
           built by engineers.

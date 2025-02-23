@@ -12,6 +12,7 @@ export function PreviewCardDemo() {
         remain into the digital age.
       </p>
       <PreviewCard.Popup>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           width='448'
           height='300'
