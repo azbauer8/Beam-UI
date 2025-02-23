@@ -1,0 +1,43 @@
+---
+title: Field
+description: A component that provides labelling and validation for form controls.
+---
+
+import { FieldDemo } from "@/docs/components/field-demo"
+import { ComponentDemo, ComponentDemoPreview } from "@/docs/component-demo"
+
+<Tabs items={["Preview", "Code"]}>
+  <ComponentDemoPreview>
+    <FieldDemo/>
+  </ComponentDemoPreview>
+  ```tsx tab="Code"
+  import { Field } from "@/components/ui/field"
+  import { Input } from "@/components/ui/input"
+
+  export function FieldDemo() {
+    return (
+      <Field>
+        <Field.Label>Name</Field.Label>
+        <Input required placeholder='Required' />
+        <Field.Error>Please enter your name</Field.Error>
+        <Field.Description>Visible on your profile</Field.Description>
+      </Field>
+    )
+  }
+  ```
+</Tabs>
+
+## Usage
+
+```tsx
+import { Field } from "@/components/ui/field"
+```
+
+```tsx
+<Field>
+  <Field.Label/>
+  {/* Some compatible input component */}
+  <Field.Error/>
+  <Field.Description/>
+</Field>
+```

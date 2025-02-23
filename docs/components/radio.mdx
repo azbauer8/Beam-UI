@@ -1,0 +1,40 @@
+---
+title: Radio
+description: An easily stylable radio button component.
+---
+
+import { RadioDemo } from "@/docs/components/radio-demo"
+import { ComponentDemo, ComponentDemoPreview } from "@/docs/component-demo"
+
+<Tabs items={["Preview", "Code"]}>
+  <ComponentDemoPreview>
+    <RadioDemo/>
+  </ComponentDemoPreview>
+  ```tsx tab="Code"
+  import { Radio } from "@/components/ui/radio"
+
+  export function RadioDemo() {
+    return (
+      <Radio>
+        <p className='font-medium'>Best apple</p>
+        <Radio.Item value='fuji-apple'>Fuji</Radio.Item>
+        <Radio.Item value='gala-apple'>Gala</Radio.Item>
+        <Radio.Item value='granny-smith-apple'>Granny Smith</Radio.Item>
+      </Radio>
+    )
+  }
+  ```
+</Tabs>
+
+## Usage
+
+```tsx
+import { Radio } from "@/components/ui/radio"
+```
+
+```tsx
+<Radio>
+  <Radio.Item/>
+  <Radio.Item/>
+</Radio>
+```

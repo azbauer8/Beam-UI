@@ -1,0 +1,47 @@
+---
+title: Popover
+description: An accessible popup anchored to a button.
+---
+
+import { PopoverDemo } from "@/docs/components/popover-demo"
+import { ComponentDemo, ComponentDemoPreview } from "@/docs/component-demo"
+
+<Tabs items={["Preview", "Code"]}>
+  <ComponentDemoPreview>
+    <PopoverDemo/>
+  </ComponentDemoPreview>
+  ```tsx tab="Code"
+  import { Popover } from "@/components/ui/popover"
+
+  export function PopoverDemo() {
+    return (
+      <Popover>
+        <Popover.Trigger>Song</Popover.Trigger>
+        <Popover.Popup>
+          <Popover.Title>Notifications</Popover.Title>
+          <Popover.Description>
+            You are all caught up. Good job!
+          </Popover.Description>
+        </Popover.Popup>
+      </Popover>
+    )
+  }
+  ```
+</Tabs>
+
+## Usage
+
+```tsx
+import { Popover } from "@/components/ui/popover"
+```
+
+```tsx
+<Popover>
+  <Popover.Trigger />
+  <Popover.Popup>
+    <Popover.Title />
+    <Popover.Description />
+    <Popover.Close />
+  </Popover.Popup>
+</Popover>
+```

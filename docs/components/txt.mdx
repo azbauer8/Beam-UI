@@ -1,0 +1,33 @@
+---
+title: Txt
+description: A set of native typography components.
+---
+
+import { TxtDemo } from "@/docs/components/txt-demo"
+import { ComponentDemo, ComponentDemoPreview } from "@/docs/component-demo"
+
+<Tabs items={["Preview", "Code"]}>
+  <ComponentDemoPreview>
+    <TxtDemo/>
+  </ComponentDemoPreview>
+  ```tsx tab="Code"
+  import { Slider } from "@/components/ui/slider"
+
+  export function SliderDemo() {
+    return (
+      <Slider>
+        <Slider.Value />
+      </Slider>
+    )
+  }
+  ```
+</Tabs>
+
+## Usage
+
+```tsx
+import { Slider } from "@/components/ui/slider"```
+
+```tsx
+<Slider/>
+```

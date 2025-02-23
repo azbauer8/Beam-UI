@@ -1,0 +1,60 @@
+---
+title: Alert Dialog
+description: A dialog that requires user response to proceed.
+---
+
+import { AlertDialogDemo } from "@/docs/components/alert-dialog-demo"
+import { ComponentDemo, ComponentDemoPreview } from "@/docs/component-demo"
+
+<Tabs items={["Preview", "Code"]}>
+  <ComponentDemoPreview>
+    <AlertDialogDemo/>
+  </ComponentDemoPreview>
+  ```tsx tab="Code"
+  import { AlertDialog } from "@/components/ui/alert-dialog"
+
+  export function AlertDialogDemo() {
+    return (
+      <AlertDialog>
+        <AlertDialog.Trigger variant='danger'>Discard draft</AlertDialog.Trigger>
+        <AlertDialog.Popup>
+          <AlertDialog.Header>
+            <AlertDialog.Title>Discard draft?</AlertDialog.Title>
+            <AlertDialog.Description>
+              You can’t undo this action.
+            </AlertDialog.Description>
+          </AlertDialog.Header>
+          <AlertDialog.Footer className='flex justify-end gap-2'>
+            <AlertDialog.Close>Cancel</AlertDialog.Close>
+            <AlertDialog.Close variant='danger'>Discard</AlertDialog.Close>
+          </AlertDialog.Footer>
+        </AlertDialog.Popup>
+      </AlertDialog>
+    )
+  }
+  ```
+</Tabs>
+
+## Usage
+
+```tsx
+import { AlertDialog } from "@/components/ui/alert-dialog"
+```
+
+```tsx
+<AlertDialog>
+  <AlertDialog.Trigger />
+  <AlertDialog.Popup>
+    <AlertDialog.Header>
+      <AlertDialog.Title />
+      <AlertDialog.Description />
+    </AlertDialog.Header>
+    <AlertDialog.Content>
+    { /* content */ }
+    </AlertDialog.Content>
+    <AlertDialog.Footer>
+      <AlertDialog.Close />
+    </AlertDialog.Footer>
+  </AlertDialog.Popup>
+</AlertDialog>
+```

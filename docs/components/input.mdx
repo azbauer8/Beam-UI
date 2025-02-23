@@ -1,0 +1,30 @@
+---
+title: Input
+description: A native input element that automatically works with the Field component.
+---
+
+import { InputDemo } from "@/docs/components/input-demo"
+import { ComponentDemo, ComponentDemoPreview } from "@/docs/component-demo"
+
+<Tabs items={["Preview", "Code"]}>
+  <ComponentDemoPreview>
+    <InputDemo/>
+  </ComponentDemoPreview>
+  ```tsx tab="Code"
+  import { Input } from "@/components/ui/input"
+
+  export function InputDemo() {
+    return <Input placeholder='Name' />
+  }
+  ```
+</Tabs>
+
+## Usage
+
+```tsx
+import { Input } from "@/components/ui/input"
+```
+
+```tsx
+<Input />
+```

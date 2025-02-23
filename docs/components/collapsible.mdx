@@ -1,0 +1,42 @@
+---
+title: Collapsible
+description: A collapsible panel controlled by a button.
+---
+
+import { CollapsibleDemo } from "@/docs/components/collapsible-demo"
+import { ComponentDemo, ComponentDemoPreview } from "@/docs/component-demo"
+
+<Tabs items={["Preview", "Code"]}>
+  <ComponentDemoPreview>
+    <CollapsibleDemo/>
+  </ComponentDemoPreview>
+  ```tsx tab="Code"
+  import { Collapsible } from "@/components/ui/collapsible"
+
+  export function CollapsibleDemo() {
+    return (
+      <Collapsible>
+        <Collapsible.Trigger>Recovery keys</Collapsible.Trigger>
+        <Collapsible.Panel>
+          <div>alien-bean-pasta</div>
+          <div>wild-irish-burrito</div>
+          <div>horse-battery-staple</div>
+        </Collapsible.Panel>
+      </Collapsible>
+    )
+  }
+  ```
+</Tabs>
+
+## Usage
+
+```tsx
+import { Collapsible } from '@/components/ui/collapsible'
+```
+
+```tsx
+<Collapsible>
+  <Collapsible.Trigger />
+  <Collapsible.Panel />
+</Collapsible>
+```

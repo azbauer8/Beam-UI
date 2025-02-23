@@ -1,0 +1,60 @@
+---
+title: Dialog
+description: A popup that opens on top of the entire page.
+---
+
+import { DialogDemo } from "@/docs/components/dialog-demo"
+import { ComponentDemo, ComponentDemoPreview } from "@/docs/component-demo"
+
+<Tabs items={["Preview", "Code"]}>
+  <ComponentDemoPreview>
+    <DialogDemo/>
+  </ComponentDemoPreview>
+  ```tsx tab="Code"
+  import { Dialog } from "@/components/ui/dialog"
+
+  export function DialogDemo() {
+    return (
+      <Dialog>
+        <Dialog.Trigger>View notifications</Dialog.Trigger>
+        <Dialog.Popup>
+          <Dialog.Header>
+            <Dialog.Title>Notifications</Dialog.Title>
+            <Dialog.Description>
+              You are all caught up. Good job!
+            </Dialog.Description>
+          </Dialog.Header>
+          <Dialog.Content>No notifications to display.</Dialog.Content>
+          <Dialog.Footer className='flex justify-end'>
+            <Dialog.Close>Close</Dialog.Close>
+          </Dialog.Footer>
+        </Dialog.Popup>
+      </Dialog>
+    )
+  }
+  ```
+</Tabs>
+
+## Usage
+
+```tsx
+import { Dialog } from '@base-ui-components/react/dialog'
+```
+
+```tsx
+<Dialog>
+  <Dialog.Trigger />
+  <Dialog.Popup>
+    <Dialog.Header>
+      <Dialog.Title />
+      <Dialog.Description />
+    </Dialog.Header>
+    <Dialog.Content>
+    { /* content */ }
+    </Dialog.Content>
+    <Dialog.Footer>
+      <Dialog.Close />
+    </Dialog.Footer>
+  </Dialog.Popup>
+</Dialog>
+```

@@ -1,0 +1,33 @@
+---
+title: Slider
+description: An easily stylable range input.
+---
+
+import { SliderDemo } from "@/docs/components/slider-demo"
+import { ComponentDemo, ComponentDemoPreview } from "@/docs/component-demo"
+
+<Tabs items={["Preview", "Code"]}>
+  <ComponentDemoPreview>
+    <SliderDemo/>
+  </ComponentDemoPreview>
+  ```tsx tab="Code"
+  import { Slider } from "@/components/ui/slider"
+
+  export function SliderDemo() {
+    return (
+      <Slider>
+        <Slider.Value />
+      </Slider>
+    )
+  }
+  ```
+</Tabs>
+
+## Usage
+
+```tsx
+import { Slider } from "@/components/ui/slider"```
+
+```tsx
+<Slider/>
+```

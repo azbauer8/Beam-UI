@@ -1,14 +1,47 @@
+---
+title: Quick start
+description: A quick guide to getting started with Beam UI.
+---
+
+<Steps>
+
+<Step>
+### Create a project with React 19 and Tailwind CSS v4
+This library uses features introduced in these newer versions.
+</Step>
+
+<Step>
+### Add dependencies
+```package-install
+@base-ui-components/react lucide-reaect clsx tailwind-merge tailwind-variants react-twc
+```
+
+</Step>
+
+<Step>
+### Configure path aliases
+```json title="tsconfig.json"
+{
+  "compilerOptions": {
+    "baseUrl": ".", // [!code highlight]
+    "paths": { // [!code highlight]
+      "@/*": ["./*"] // [!code highlight]
+    }
+  }
+}
+```
+</Step>
+
+<Step>
+### Configure styles
+```css title="globals.css"
 @import "tailwindcss";
-@import "./fuma.css";
 
 #Root {
   isolation: isolate;
 }
 
 @theme {
-  --font-sans: "Inter", sans-serif;
-  --font-mono: "JetBrains Mono", monospace;
-
   --color-bg: var(--bg);
   --color-accent: var(--accent);
   --color-selected: var(--selected);
@@ -110,9 +143,6 @@
     font-variation-settings: "opsz" 850;
     text-rendering: optimizeLegibility;
 
-    /*
-     * Scrollbar
-     */
     scrollbar-width: thin;
     scrollbar-color: var(--border) transparent;
   }
@@ -122,3 +152,47 @@
     color: var(--fg);
   }
 }
+```
+</Step>
+
+<Step>
+### Add helper utils
+```ts title="lib/utils.ts"
+import { clsx, type ClassValue } from 'clsx'
+import { twMerge } from 'tailwind-merge'
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs))
+}
+
+export function resolveClassName<T>(
+  className: string | ((state: T) => string) | undefined,
+  state: T
+) {
+  return className
+    ? typeof className === 'string'
+      ? className
+      : className(state)
+    : ''
+}
+```
+</Step>
+
+<Step>
+### Set up portals
+Add the following style to your application layout root
+```tsx title="layout.tsx"
+<body>
+  <div id="Root">
+    {children}
+  </div>
+</body>
+```
+</Step>
+
+<Step>
+### That's it
+You can now start adding components to your project.
+</Step>
+
+</Steps>

@@ -1,0 +1,64 @@
+---
+title: Tooltip
+description: A popup that appears when an element is hovered or focused, showing a hint for sighted users.
+---
+
+import { TooltipDemo } from "@/docs/components/tooltip-demo"
+import { ComponentDemo, ComponentDemoPreview } from "@/docs/component-demo"
+
+<Tabs items={["Preview", "Code"]}>
+  <ComponentDemoPreview>
+    <TooltipDemo/>
+  </ComponentDemoPreview>
+  ```tsx tab="Code"
+  import { toggleStyles } from "@/components/ui/toggle/styles"
+  import { Tooltip } from "@/components/ui/tooltip"
+  import { BoldIcon, ItalicIcon, UnderlineIcon } from "lucide-react"
+
+  export function TooltipDemo() {
+    return (
+      <Tooltip.Provider>
+        <div className='bg-accent flex gap-px rounded-md border p-0.5'>
+          <Tooltip>
+            <Tooltip.Trigger className={toggleStyles().toggle}>
+              <BoldIcon />
+            </Tooltip.Trigger>
+            <Tooltip.Popup>Bold</Tooltip.Popup>
+          </Tooltip>
+          <Tooltip>
+            <Tooltip.Trigger className={toggleStyles().toggle}>
+              <ItalicIcon />
+            </Tooltip.Trigger>
+            <Tooltip.Popup>Italic</Tooltip.Popup>
+          </Tooltip>
+          <Tooltip>
+            <Tooltip.Trigger className={toggleStyles().toggle}>
+              <UnderlineIcon />
+            </Tooltip.Trigger>
+            <Tooltip.Popup>Underline</Tooltip.Popup>
+          </Tooltip>
+        </div>
+      </Tooltip.Provider>
+    )
+  }
+  ```
+</Tabs>
+
+## Usage
+
+```tsx
+import { Tooltip } from "@/components/ui/tooltip"
+```
+
+```tsx
+<Tooltip.Provider>
+  <Tooltip>
+    <Tooltip.Trigger />
+    <Tooltip.Popup />
+  </Tooltip>
+  <Tooltip>
+    <Tooltip.Trigger />
+    <Tooltip.Popup />
+  </Tooltip>
+</Tooltip.Provider>
+```

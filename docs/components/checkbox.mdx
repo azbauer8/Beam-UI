@@ -1,0 +1,45 @@
+---
+title: Checkbox
+description: An easily stylable checkbox component.
+---
+
+import { CheckboxDemo } from "@/docs/components/checkbox-demo"
+import { ComponentDemo, ComponentDemoPreview } from "@/docs/component-demo"
+
+<Tabs items={["Preview", "Code"]}>
+  <ComponentDemoPreview>
+    <CheckboxDemo/>
+  </ComponentDemoPreview>
+  ```tsx tab="Code"
+  import { Checkbox } from "@/components/ui/checkbox"
+
+  export function CheckboxDemo() {
+    return (
+      <div className='space-y-2'>
+        <Checkbox>Enable notifications</Checkbox>
+        <Checkbox.Group>
+          <p className='font-medium'>Apples</p>
+          <Checkbox>Fuji</Checkbox>
+          <Checkbox>Gala</Checkbox>
+          <Checkbox>Granny Smith</Checkbox>
+        </Checkbox.Group>
+      </div>
+    )
+  }
+  ```
+</Tabs>
+
+## Usage
+
+```tsx
+import { Checkbox } from "@/components/ui/checkbox"
+```
+
+```tsx
+<Checkbox>Label</Checkbox>
+<Checkbox.Group>
+  <Checkbox>Label 1</Checkbox>
+  <Checkbox>Label 2</Checkbox>
+  <Checkbox>Label 3</Checkbox>
+</Checkbox.Group>
+```

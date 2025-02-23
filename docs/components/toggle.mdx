@@ -1,0 +1,57 @@
+---
+title: Toggle
+description: A two-state button that can be on or off.
+---
+
+import { ToggleDemo } from "@/docs/components/toggle-demo"
+import { ComponentDemo, ComponentDemoPreview } from "@/docs/component-demo"
+
+<Tabs items={["Preview", "Code"]}>
+  <ComponentDemoPreview>
+    <ToggleDemo/>
+  </ComponentDemoPreview>
+  ```tsx tab="Code"
+  import { Toggle } from "@/components/ui/toggle"
+  import {
+    AlignCenterIcon,
+    AlignLeftIcon,
+    AlignRightIcon,
+    PinIcon
+  } from "lucide-react"
+
+  export function ToggleDemo() {
+    return (
+      <div className='flex flex-col items-center gap-2'>
+        <Toggle>
+          <PinIcon />
+        </Toggle>
+        <Toggle.Group>
+          <Toggle>
+            <AlignLeftIcon />
+          </Toggle>
+          <Toggle>
+            <AlignCenterIcon />
+          </Toggle>
+          <Toggle>
+            <AlignRightIcon />
+          </Toggle>
+        </Toggle.Group>
+      </div>
+    )
+  }
+  ```
+</Tabs>
+
+## Usage
+
+```tsx
+import { Toggle } from "@/components/ui/toggle"
+```
+
+```tsx
+<Toggle/>
+<Toggle.Group>
+  <Toggle/>
+  <Toggle/>
+</Toggle.Group>
+```

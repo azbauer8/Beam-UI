@@ -1,0 +1,30 @@
+---
+title: Number Field
+description: A numeric input element with increment and decrement buttons, and a scrub area.
+---
+
+import { NumberFieldDemo } from "@/docs/components/number-field-demo"
+import { ComponentDemo, ComponentDemoPreview } from "@/docs/component-demo"
+
+<Tabs items={["Preview", "Code"]}>
+  <ComponentDemoPreview>
+    <NumberFieldDemo/>
+  </ComponentDemoPreview>
+  ```tsx tab="Code"
+  import { NumberField } from "@/components/ui/number-field"
+
+  export function NumberFieldDemo() {
+    return <NumberField defaultValue={100} />
+  }
+  ```
+</Tabs>
+
+## Usage
+
+```tsx
+import { NumberField } from "@/components/ui/number-field"
+```
+
+```tsx
+<NumberField />
+```

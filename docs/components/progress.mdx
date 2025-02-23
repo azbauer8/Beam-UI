@@ -1,0 +1,29 @@
+---
+title: Progress
+description: Displays the status of a task that takes a long time.
+---
+
+import { ProgressDemo } from "@/docs/components/progress-demo"
+import { ComponentDemo, ComponentDemoPreview } from "@/docs/component-demo"
+
+<Tabs items={["Preview", "Code"]}>
+  <ComponentDemoPreview>
+    <ProgressDemo/>
+  </ComponentDemoPreview>
+  ```tsx tab="Code"
+  import { Progress } from "@/components/ui/progress"
+
+  export function ProgressDemo() {
+    return <Progress value={50} />
+  }
+  ```
+</Tabs>
+
+## Usage
+
+```tsx
+import { Progress } from "@/components/ui/progress"
+```
+
+```tsx
+<Progress />

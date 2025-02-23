@@ -1,0 +1,19 @@
+@import "fumadocs-ui/css/black.css";
+@import "fumadocs-ui/css/preset.css";
+
+@source '../../node_modules/fumadocs-ui/dist/**/*.js';
+
+div[role="tablist"].bg-fd-secondary.text-fd-muted-foreground {
+  @apply bg-accent gap-1 border-b px-2 py-1;
+}
+
+button[data-radix-collection-item] {
+  @apply hover:bg-selected text-accent-fg rounded-md border-b-0 px-1.5 py-0.5;
+  &[aria-selected="true"] {
+    @apply bg-selected text-fg;
+  }
+}
+
+figure.fd-codeblock {
+  @apply bg-accent/75;
+}

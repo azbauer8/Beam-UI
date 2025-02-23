@@ -1,0 +1,143 @@
+"use client"
+import { Button } from "@/components/ui/button"
+import { Field } from "@/components/ui/field"
+import { Input } from "@/components/ui/input"
+import { Form } from "@base-ui-components/react/form"
+import { useState } from "react"
+
+export function FormDemo() {
+  const [errors, setErrors] = useState({})
+  const [loading, setLoading] = useState(false)
+  return (
+    <Form
+      className='flex w-full max-w-64 flex-col gap-4'
+      errors={errors}
+      onClearErrors={setErrors}
+      onSubmit={async event => {
+        event.preventDefault()
+        const formData = new FormData(event.currentTarget)
+        const value = formData.get("url") as string
+
+        setLoading(true)
+        const response = await submitForm(value)
+        const serverErrors = {
+          url: response.error
+        }
+
+        setErrors(serverErrors)
+        setLoading(false)
+      }}
+    >
+      <Field name='url'>
+        <Field.Label>Homepage</Field.Label>
+        <Input
+          type='url'
+          required
+          defaultValue='https://example.com'
+          placeholder='https://example.com'
+          pattern='https?://.*'
+        />
+        <Field.Error />
+      </Field>
+      <Button disabled={loading} type='submit'>
+        {loading ? "Submitting..." : "Submit"}
+      </Button>
+    </Form>
+  )
+}
+
+async function submitForm(value: string) {
+  // Mimic a server response
+  await new Promise(resolve => {
+    setTimeout(resolve, 1000)
+  })
+
+  try {
+    const url = new URL(value)
+
+    if (url.hostname.endsWith("example.com")) {
+      return { error: "The example domain is not allowed" }
+    }
+  } catch {
+    return { error: "This is not a valid URL" }
+  }
+
+  return { success: true }
+}
+
+export const formCodeBlock = `import { Button } from "@/components/ui/button"
+import { Field } from "@/components/ui/field"
+import { Input } from "@/components/ui/input"
+import { Form } from "@base-ui-components/react/form"
+import { useState } from "react"
+
+export function FormDemo() {
+  const [errors, setErrors] = useState({})
+  const [loading, setLoading] = useState(false)
+  return (
+    <Form
+      className='flex w-full max-w-64 flex-col gap-4'
+      errors={errors}
+      onClearErrors={setErrors}
+      onSubmit={async event => {
+        event.preventDefault()
+        const formData = new FormData(event.currentTarget)
+        const value = formData.get("url") as string
+
+        setLoading(true)
+        const response = await submitForm(value)
+        const serverErrors = {
+          url: response.error
+        }
+
+        setErrors(serverErrors)
+        setLoading(false)
+      }}
+    >
+      <Field name='url'>
+        <Field.Label>Homepage</Field.Label>
+        <Input
+          type='url'
+          required
+          defaultValue='https://example.com'
+          placeholder='https://example.com'
+          pattern='https?://.*'
+        />
+        <Field.Error />
+      </Field>
+      <Button disabled={loading} type='submit'>
+        {loading ? "Submitting..." : "Submit"}
+      </Button>
+    </Form>
+  )
+}
+
+async function submitForm(value: string) {
+  // Mimic a server response
+  await new Promise(resolve => {
+    setTimeout(resolve, 1000)
+  })
+
+  try {
+    const url = new URL(value)
+
+    if (url.hostname.endsWith("example.com")) {
+      return { error: "The example domain is not allowed" }
+    }
+  } catch {
+    return { error: "This is not a valid URL" }
+  }
+
+  return { success: true }
+}`
+
+export const formUsageBlock = `import { Field } from '@/components/ui/field'
+import { Form } from '@base-ui-components/react/form'
+
+<Form>
+  <Field>
+    <Field.Label />
+    {/* Some compatible input component */}
+    <Field.Error />
+  </Field>
+</Form>`
