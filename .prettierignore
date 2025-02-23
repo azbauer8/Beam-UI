@@ -1,0 +1,17 @@
+# .prettierignore
+
+# Ignore build directories
+/dist/
+
+# Ignore coverage reports
+/coverage/
+
+# Ignore TypeScript configuration files
+tsconfig.json
+tsconfig.*.json
+
+# Ignore Node.js modules directory
+node_modules/
+
+# Ignore version control directories
+.git/
