@@ -214,9 +214,10 @@ export function cn<T>(
     clsx(
       inputs.map(input => {
         if (
-          input !== null &&
+          !!input &&
           typeof input === "object" &&
-          "className" in input
+          "className" in input &&
+          input.className !== undefined
         ) {
           return typeof input.className === "string"
             ? input.className
@@ -227,6 +228,7 @@ export function cn<T>(
     )
   )
 }
+
 ```
 </Step>
 

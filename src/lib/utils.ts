@@ -10,14 +10,10 @@ export function cn<T>(
   return twMerge(
     clsx(
       inputs.map(input => {
-        if (
-          input !== null &&
-          typeof input === "object" &&
-          "className" in input
-        ) {
-          return typeof input.className === "string"
-            ? input.className
-            : input.className(input.state)
+        if (!!input && typeof input === "object" && "className" in input) {
+          return typeof input.className === "function"
+            ? input.className(input.state)
+            : input.className
         }
         return input
       })
