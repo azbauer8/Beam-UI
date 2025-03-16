@@ -13,7 +13,7 @@ This library uses features introduced in these newer versions.
 <Step>
 ### Add dependencies
 ```package-install
-@base-ui-components/react lucide-reaect clsx tailwind-merge tailwind-variants react-twc
+@base-ui-components/react lucide-react clsx tailwind-merge tailwind-variants react-twc
 ```
 
 </Step>
@@ -37,60 +37,14 @@ This library uses features introduced in these newer versions.
 ```css title="globals.css"
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 #Root {
   isolation: isolate;
 }
 
-@theme {
-  --color-bg: var(--bg);
-  --color-accent: var(--accent);
-  --color-selected: var(--selected);
-  --color-overlay: var(--overlay);
-
-  --color-fg: var(--fg);
-  --color-accent-fg: var(--accent-fg);
-
-  --color-border: var(--border);
-  --color-ring: var(--ring);
-
-  --color-primary: var(--primary);
-  --color-primary-fg: var(--primary-fg);
-
-  --color-danger: var(--danger);
-  --color-danger-fg: var(--danger-fg);
-
-  --color-success: var(--success);
-  --color-success-fg: var(--success-fg);
-
-  --color-warning: var(--warning);
-  --color-warning-fg: var(--warning-fg);
-}
-
 @layer base {
-  :root {
-    --bg: oklch(100% 0 0);
-    --accent: oklch(0.98 0.001 264);
-    --selected: oklch(0.12 0.038 264 / 0.05);
-    --overlay: var(--bg);
-
-    --fg: var(--color-neutral-950);
-    --accent-fg: var(--color-neutral-600);
-
-    --border: oklch(0.12 0.036 264 / 0.07);
-    --ring: var(--color-blue-600);
-
-    --primary: var(--color-blue-600);
-    --primary-fg: var(--color-blue-50);
-
-    --success: var(--color-emerald-600);
-    --success-fg: var(--color-emerald-50);
-
-    --warning: var(--color-amber-600);
-    --warning-fg: var(--color-amber-950);
-
-    --danger: var(--color-red-600);
-    --danger-fg: var(--color-red-50);
-
+  @theme {
     --radius-lg: 0.5rem;
     --radius-xs: calc(var(--radius-lg) - 6px);
     --radius-sm: calc(var(--radius-lg) - 4px);
@@ -99,57 +53,146 @@ This library uses features introduced in these newer versions.
     --radius-2xl: calc(var(--radius-lg) + 4px);
     --radius-3xl: calc(var(--radius-lg) + 6px);
     --radius-4xl: calc(var(--radius-lg) + 8px);
+
+    --color-bg1: #fff;
+    --color-bg2: #fafafa;
+
+    --color-neutral1: #f2f2f2;
+    --color-neutral2: #ebebeb;
+    --color-neutral3: #e6e6e6;
+    --color-neutral4: #ebebeb;
+    --color-neutral5: #c9c9c9;
+    --color-neutral6: #a8a8a8;
+    --color-neutral7: #8f8f8f;
+    --color-neutral8: #7d7d7d;
+    --color-neutral9: #666;
+    --color-neutral10: #171717;
+
+    --color-info1: #f0f7ff;
+    --color-info2: #ebf5ff;
+    --color-info3: #e0f0ff;
+    --color-info4: #cce6ff;
+    --color-info5: #99ceff;
+    --color-info6: #52aeff;
+    --color-info7: #0072f5;
+    --color-info8: #0062d1;
+    --color-info9: #0068d6;
+    --color-info10: #00254d;
+
+    --color-danger1: #fff0f0;
+    --color-danger2: #ffebeb;
+    --color-danger3: #ffe6e6;
+    --color-danger4: #fdd8d8;
+    --color-danger5: #f8b9b9;
+    --color-danger6: #f87275;
+    --color-danger7: #e5484d;
+    --color-danger8: #da2f35;
+    --color-danger9: #cb2a2f;
+    --color-danger10: #391417;
+
+    --color-warning1: #fff6e6;
+    --color-warning2: #fff4d6;
+    --color-warning3: #fef0cd;
+    --color-warning4: #ffdd8f;
+    --color-warning5: #ffc96b;
+    --color-warning6: #f5b047;
+    --color-warning7: #ffb224;
+    --color-warning8: #ff990a;
+    --color-warning9: #a35200;
+    --color-warning10: #4e2009;
+
+    --color-success1: #effbef;
+    --color-success2: #ebfaeb;
+    --color-success3: #daf6da;
+    --color-success4: #c6f1c7;
+    --color-success5: #99e69e;
+    --color-success6: #6cda75;
+    --color-success7: #45a557;
+    --color-success8: #398e4a;
+    --color-success9: #297a3a;
+    --color-success10: #1b311e;
   }
 
-  .dark {
-    --bg: oklch(0% 0 0);
-    --accent: oklch(0.17 0.001 264);
-    --selected: oklch(0.28 0.003 264 / 0.65);
-    --overlay: var(--accent);
+  @variant dark {
+    --color-bg1: #0a0a0a;
+    --color-bg2: #000;
 
-    --fg: var(--color-neutral-50);
-    --accent-fg: var(--color-neutral-400);
+    --color-neutral1: #1a1a1a;
+    --color-neutral2: #1f1f1f;
+    --color-neutral3: #292929;
+    --color-neutral4: #2e2e2e;
+    --color-neutral5: #454545;
+    --color-neutral6: #878787;
+    --color-neutral7: #8f8f8f;
+    --color-neutral8: #7d7d7d;
+    --color-neutral9: #a1a1a1;
+    --color-neutral10: #ededed;
 
-    --border: oklch(0.29 0.003 264 / 0.8);
-    --ring: var(--color-blue-600);
+    --color-info1: #0f1c2e;
+    --color-info2: #10233d;
+    --color-info3: #0f2f57;
+    --color-info4: #0d3868;
+    --color-info5: #0a4380;
+    --color-info6: #0091ff;
+    --color-info7: #0072f5;
+    --color-info8: #0062d1;
+    --color-info9: #52a8ff;
+    --color-info10: #ebf6ff;
 
-    --primary: var(--color-blue-500);
-    --primary-fg: var(--color-blue-100);
+    --color-danger1: #2a1314;
+    --color-danger2: #3c1618;
+    --color-danger3: #561a1e;
+    --color-danger4: #671e21;
+    --color-danger5: #832126;
+    --color-danger6: #e5484d;
+    --color-danger7: #e5484d;
+    --color-danger8: #d93036;
+    --color-danger9: #ff6166;
+    --color-danger10: #feecee;
 
-    --success: var(--color-emerald-500);
-    --success-fg: var(--color-emerald-100);
+    --color-warning1: #291800;
+    --color-warning2: #331b00;
+    --color-warning3: #4d2a00;
+    --color-warning4: #573300;
+    --color-warning5: #6b4105;
+    --color-warning6: #e79d13;
+    --color-warning7: #ffb224;
+    --color-warning8: #ff990a;
+    --color-warning9: #f2a20d;
+    --color-warning10: #fef3dc;
 
-    --warning: var(--color-amber-500);
-    --warning-fg: var(--color-amber-950);
-
-    --danger: oklch(65.58% 0.2295 25.331);
-    --danger-fg: var(--color-red-100);
+    --color-success1: #0b2212;
+    --color-success2: #0f2e18;
+    --color-success3: #12361b;
+    --color-success4: #0c451b;
+    --color-success5: #126426;
+    --color-success6: #1a9338;
+    --color-success7: #45a557;
+    --color-success8: #398e4a;
+    --color-success9: #62c073;
+    --color-success10: #e5fbea;
   }
-}
 
-@layer base {
   *,
   ::after,
   ::before,
   ::backdrop,
   ::file-selector-button {
-    @apply border-border outline-border ring-ring;
-  }
-}
+    @apply border-neutral4 outline-neutral4 ring-info7;
 
-@layer base {
-  * {
     font-feature-settings: "cv11", "ss01";
     font-variation-settings: "opsz" 850;
     text-rendering: optimizeLegibility;
 
+    /*
+    * Scrollbar
+    */
     scrollbar-width: thin;
     scrollbar-color: var(--border) transparent;
   }
 
   body {
-    background-color: var(--bg);
-    color: var(--fg);
+    @apply bg-bg2 text-neutral10;
   }
 }
 ```

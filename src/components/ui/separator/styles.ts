@@ -1,7 +1,7 @@
 import { tv } from "tailwind-variants"
 
 const separatorStyles = tv({
-  base: "bg-border",
+  base: "bg-neutral5",
   variants: {
     orientation: {
       horizontal: "h-px",

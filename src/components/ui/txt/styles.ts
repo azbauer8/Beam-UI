@@ -2,17 +2,18 @@ import { tv } from "tailwind-variants"
 
 const txtStyles = tv({
   slots: {
-    h1: "text-3xl font-bold text-balance",
-    h2: "text-2xl font-semibold text-balance",
-    h3: "text-xl font-medium text-balance",
-    large: "text-lg font-medium text-balance",
+    h1: "text-4xl font-extrabold tracking-tight text-balance lg:text-5xl",
+    h2: "text-3xl font-semibold tracking-tight text-balance",
+    h3: "text-2xl font-semibold tracking-tight text-balance",
+    h4: "text-xl font-semibold tracking-tight text-balance",
     p: "text-balance",
-    muted: "text-accent-fg text-balance",
-    link: "text-primary underline-offset-4 underline decoration-primary/50 hover:decoration-primary transition-colors",
-    code: "font-mono tracking-tighter",
+    muted: "text-neutral9 text-balance",
+    large: "text-lg font-semibold text-balance",
+    small: "text-sm font-medium",
+    link: "text-info7 decoration-info7/50 hover:decoration-info7 w-fit underline underline-offset-4 transition-colors",
     codeBlock:
-      "font-mono tracking-tighter px-1 -mx-1 border  bg-accent rounded size-fit",
-    kbd: "font-mono font-medium text-sm tracking-tighter px-1.5 -mx-1.5 py-[1px] -my-[1px] border bg-accent rounded size-fit"
+      "bg-neutral1 -mx-1 inline-flex size-fit rounded-md border px-1 font-mono tracking-tighter",
+    kbd: "bg-neutral1 -mx-1 inline-flex size-fit rounded-md border px-1 text-sm tracking-widest"
   }
 })
 

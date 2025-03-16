@@ -3,10 +3,10 @@ import { tv } from "tailwind-variants"
 const sliderStyles = tv({
   slots: {
     control: "flex w-56 touch-none items-center py-3 select-none",
-    track: "h-1 w-full rounded bg-selected select-none",
-    indicator: "rounded bg-accent-fg select-none",
+    track: "bg-neutral3 h-1 w-full rounded select-none",
+    indicator: "bg-info7 rounded select-none",
     thumb:
-      "size-4 rounded-full bg-white border-2 select-none focus-visible:border-2 focus-visible:border-ring"
+      "ring-neutral4 size-4 rounded-full bg-white shadow ring select-none focus-visible:ring"
   }
 })
 

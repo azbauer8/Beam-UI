@@ -1,8 +1,164 @@
 ---
 title: Colors
-description: A color palette utilized throughout Beam UI.
+description: A color palette utilized throughout Beam UI. Inspired by Geist Design System.
 ---
 
-import { ColorPalettePreview } from "@/docs/color-palette-preview"
+import { ColorSwatch, ColorPaletteDemo } from "@/docs/overview/color-palette-demo"
 
-<ColorPalettePreview />
+## Scales
+
+<ColorPaletteDemo />
+
+## Usage
+
+### Backgrounds
+<Cards>
+  <Card
+    title="Background 1"
+  >
+    <div className="flex flex-col">
+    Surface element background
+    <ColorSwatch
+      color="bg1"
+      className="bg-bg1 border-neutral4"
+    />
+  </div>
+  </Card>
+  <Card
+    title="Background 2"
+  >
+    <div className="flex flex-col">
+        Page background
+      <ColorSwatch
+        color="bg2"
+        className="bg-bg2 border-neutral4"
+      />
+    </div>
+  </Card>
+</Cards>
+
+### Colors 1–3: Component Backgrounds
+<Cards>
+  <Card
+    title="Color 1"
+  >
+    <div className="flex flex-col">
+        Default background
+      <ColorSwatch
+        color="neutral1"
+        className="bg-neutral1"
+      />
+    </div>
+  </Card>
+  <Card
+    title="Color 2"
+  >
+    <div className="flex flex-col">
+        Hover background
+      <ColorSwatch
+        color="neutral2"
+        className="bg-neutral2"
+      />
+    </div>
+  </Card>
+  <Card
+    title="Color 3"
+  >
+    <div className="flex flex-col">
+        Active background
+      <ColorSwatch
+        color="neutral3"
+        className="bg-neutral3"
+      />
+    </div>
+  </Card>
+</Cards>
+
+### Colors 4-6: Borders
+<Cards>
+  <Card
+    title="Color 4"
+  >
+    <div className="flex flex-col">
+        Default border
+      <ColorSwatch
+        color="neutral4"
+        className="bg-neutral4"
+      />
+    </div>
+  </Card>
+  <Card
+    title="Color 5"
+  >
+    <div className="flex flex-col">
+        Hover border
+      <ColorSwatch
+        color="neutral5"
+        className="bg-neutral5"
+      />
+    </div>
+  </Card>
+  <Card
+    title="Color 6"
+  >
+    <div className="flex flex-col">
+        Active border
+      <ColorSwatch
+        color="neutral6"
+        className="bg-neutral6"
+      />
+    </div>
+  </Card>
+</Cards>
+
+### Colors 7-8: High Contrast Backgrounds
+<Cards>
+  <Card
+    title="Color 7"
+  >
+    <div className="flex flex-col">
+      High contrast background
+      <ColorSwatch
+        color="neutral7"
+        className="bg-neutral7"
+      />
+    </div>
+  </Card>
+  <Card
+    title="Color 8"
+  >
+    <div className="flex flex-col">
+      Hover high contrast background
+      <ColorSwatch
+        color="neutral8"
+        className="bg-neutral8"
+      />
+    </div>
+  </Card>
+</Cards>
+
+### Colors 9-10: Text and Icons
+<Cards>
+  <Card
+    title="Color 9"
+  >
+    <div className="flex flex-col">
+      Secondary text and icons
+      <ColorSwatch
+        color="neutral9"
+        className="bg-neutral9"
+      />
+    </div>
+  </Card>
+  <Card
+    title="Color 10"
+  >
+    <div className="flex flex-col">
+      Primary text and icons
+      <ColorSwatch
+        color="neutral10"
+        className="bg-neutral10"
+      />
+    </div>
+  </Card>
+</Cards>

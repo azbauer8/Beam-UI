@@ -4,16 +4,20 @@
 @source '../../node_modules/fumadocs-ui/dist/**/*.js';
 
 div[role="tablist"].bg-fd-secondary.text-fd-muted-foreground {
-  @apply bg-accent gap-1 border-b px-2 py-1;
+  @apply bg-bg1 gap-1 border-b px-2 py-1;
 }
 
 button[data-radix-collection-item] {
-  @apply hover:bg-selected text-accent-fg rounded-md border-b-0 px-1.5 py-0.5;
+  @apply hover:bg-neutral2 text-neutral9 rounded-md border-b-0 px-1.5 py-0.5;
   &[aria-selected="true"] {
-    @apply bg-selected text-fg;
+    @apply bg-neutral3 text-neutral10;
   }
 }
 
+div[role="tabpanel"] {
+  @apply bg-bg2;
+}
+
 figure.fd-codeblock {
-  @apply bg-accent/75;
+  @apply bg-bg1;
 }
