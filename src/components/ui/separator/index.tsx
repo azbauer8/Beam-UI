@@ -1,5 +1,5 @@
 import { separatorStyles } from "@/components/ui/separator/styles"
-import { resolveClassName } from "@/lib/utils"
+import { cn } from "@/lib/utils"
 import { Separator as SeparatorPrimitive } from "@base-ui-components/react/separator"
 import { VariantProps } from "tailwind-variants"
 
@@ -17,7 +17,7 @@ function Separator({
       className={state =>
         separatorStyles({
           orientation,
-          className: resolveClassName(className, state)
+          className: cn({ className, state })
         })
       }
     />

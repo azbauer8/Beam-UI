@@ -1,4 +1,4 @@
-import { resolveClassName } from "@/lib/utils"
+import { cn } from "@/lib/utils"
 
 import { txtStyles } from "@/components/ui/txt/styles"
 import { PreviewCard as PreviewCardPrimitive } from "@base-ui-components/react/preview-card"
@@ -22,7 +22,7 @@ function PreviewCardTrigger({
     <PreviewCardPrimitive.Trigger
       {...props}
       className={state =>
-        txtStyles().link({ className: resolveClassName(className, state) })
+        txtStyles().link({ className: cn({ className, state }) })
       }
     >
       {children}
@@ -59,13 +59,15 @@ function PreviewCardPopup({
         alignOffset={alignOffset}
         side={side}
         sideOffset={sideOffset}
-        className={state => resolveClassName(positionerProps?.className, state)}
+        className={state =>
+          cn({ className: positionerProps?.className, state })
+        }
       >
         <PreviewCardPrimitive.Popup
           {...props}
           className={state =>
             popup({
-              className: resolveClassName(className, state)
+              className: cn({ className, state })
             })
           }
         >

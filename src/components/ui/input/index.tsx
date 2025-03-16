@@ -1,5 +1,5 @@
 import { inputStyles } from "@/components/ui/input/styles"
-import { resolveClassName } from "@/lib/utils"
+import { cn } from "@/lib/utils"
 import { Input as InputPrimitive } from "@base-ui-components/react/input"
 
 import * as React from "react"
@@ -15,7 +15,7 @@ function Input({
       {...props}
       className={state =>
         inputStyles({
-          className: resolveClassName(className, state)
+          className: cn({ className, state })
         })
       }
     />

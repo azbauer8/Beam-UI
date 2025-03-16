@@ -1,5 +1,5 @@
 import { toggleStyles } from "@/components/ui/toggle/styles"
-import { resolveClassName } from "@/lib/utils"
+import { cn } from "@/lib/utils"
 import { Toggle as TogglePrimitive } from "@base-ui-components/react/toggle"
 import { ToggleGroup as ToggleGroupPrimitive } from "@base-ui-components/react/toggle-group"
 
@@ -14,9 +14,7 @@ function Toggle({
   return (
     <TogglePrimitive
       {...props}
-      className={state =>
-        toggle({ className: resolveClassName(className, state) })
-      }
+      className={state => toggle({ className: cn({ className, state }) })}
     />
   )
 }
@@ -30,9 +28,7 @@ function ToggleGroup({
   return (
     <ToggleGroupPrimitive
       {...props}
-      className={state =>
-        toggleGroup({ className: resolveClassName(className, state) })
-      }
+      className={state => toggleGroup({ className: cn({ className, state }) })}
     />
   )
 }

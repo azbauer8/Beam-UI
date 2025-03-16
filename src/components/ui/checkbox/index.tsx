@@ -1,5 +1,5 @@
 import { checkboxStyles } from "@/components/ui/checkbox/styles"
-import { resolveClassName } from "@/lib/utils"
+import { cn } from "@/lib/utils"
 import { Checkbox as CheckboxPrimitive } from "@base-ui-components/react/checkbox"
 import { CheckboxGroup as CheckboxGroupPrimitive } from "@base-ui-components/react/checkbox-group"
 import { CheckIcon } from "lucide-react"
@@ -19,9 +19,7 @@ function Checkbox({
     <label className={wrapper({ className: wrapperClassName })}>
       <CheckboxPrimitive.Root
         {...props}
-        className={state =>
-          root({ className: resolveClassName(className, state) })
-        }
+        className={state => root({ className: cn({ className, state }) })}
       >
         <CheckboxPrimitive.Indicator className={indicator()}>
           <CheckIcon />
@@ -41,9 +39,7 @@ function CheckboxGroup({
   return (
     <CheckboxGroupPrimitive
       {...props}
-      className={state =>
-        group({ className: resolveClassName(className, state) })
-      }
+      className={state => group({ className: cn({ className, state }) })}
     />
   )
 }

@@ -1,5 +1,5 @@
 import { avatarStyles } from "@/components/ui/avatar/styles"
-import { resolveClassName } from "@/lib/utils"
+import { cn } from "@/lib/utils"
 import { Avatar as AvatarPrimitive } from "@base-ui-components/react/avatar"
 
 const { root, image, fallback } = avatarStyles()
@@ -13,9 +13,7 @@ function Avatar({
   return (
     <AvatarPrimitive.Root
       {...props}
-      className={state =>
-        root({ className: resolveClassName(className, state) })
-      }
+      className={state => root({ className: cn({ className, state }) })}
     />
   )
 }
@@ -30,9 +28,7 @@ function AvatarImage({
 }) {
   return (
     <AvatarPrimitive.Image
-      className={state =>
-        image({ className: resolveClassName(className, state) })
-      }
+      className={state => image({ className: cn({ className, state }) })}
       height={height}
       width={width}
       {...props}
@@ -49,9 +45,7 @@ function AvatarFallback({
   return (
     <AvatarPrimitive.Fallback
       {...props}
-      className={state =>
-        fallback({ className: resolveClassName(className, state) })
-      }
+      className={state => fallback({ className: cn({ className, state }) })}
     />
   )
 }

@@ -1,6 +1,6 @@
 import { buttonStyles } from "@/components/ui/button/styles"
 import { dialogStyles } from "@/components/ui/dialog/styles"
-import { resolveClassName } from "@/lib/utils"
+import { cn } from "@/lib/utils"
 import { Dialog as DialogPrimitive } from "@base-ui-components/react/dialog"
 import * as React from "react"
 import { VariantProps } from "tailwind-variants"
@@ -28,7 +28,7 @@ function DialogTrigger({
         buttonStyles({
           size,
           variant,
-          className: resolveClassName(className, state)
+          className: cn({ className, state })
         })
       }
     />
@@ -48,7 +48,7 @@ function DialogPopup({
         {...props}
         className={state =>
           popup({
-            className: resolveClassName(className, state)
+            className: cn({ className, state })
           })
         }
       />
@@ -78,7 +78,7 @@ function DialogTitle({
       {...props}
       className={state =>
         title({
-          className: resolveClassName(className, state)
+          className: cn({ className, state })
         })
       }
     />
@@ -96,7 +96,7 @@ function DialogDescription({
       {...props}
       className={state =>
         description({
-          className: resolveClassName(className, state)
+          className: cn({ className, state })
         })
       }
     />
@@ -141,7 +141,7 @@ function DialogClose({
         buttonStyles({
           size,
           variant,
-          className: resolveClassName(className, state)
+          className: cn({ className, state })
         })
       }
     />

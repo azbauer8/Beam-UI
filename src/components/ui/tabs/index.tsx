@@ -1,7 +1,7 @@
 "use client"
 
 import { tabsStyles } from "@/components/ui/tabs/styles"
-import { resolveClassName } from "@/lib/utils"
+import { cn } from "@/lib/utils"
 import { Tabs as TabsPrimitive } from "@base-ui-components/react/tabs"
 
 const { root, list, indicator, tab, panel } = tabsStyles()
@@ -15,9 +15,7 @@ function Tabs({
   return (
     <TabsPrimitive.Root
       {...props}
-      className={state =>
-        root({ className: resolveClassName(className, state) })
-      }
+      className={state => root({ className: cn({ className, state }) })}
     />
   )
 }
@@ -32,15 +30,11 @@ function TabsList({
   return (
     <TabsPrimitive.List
       {...props}
-      className={state =>
-        list({ className: resolveClassName(className, state) })
-      }
+      className={state => list({ className: cn({ className, state }) })}
     >
       {children}
       <TabsPrimitive.Indicator
-        className={state =>
-          indicator({ className: resolveClassName(className, state) })
-        }
+        className={state => indicator({ className: cn({ className, state }) })}
       />
     </TabsPrimitive.List>
   )
@@ -55,9 +49,7 @@ function TabsTab({
   return (
     <TabsPrimitive.Tab
       {...props}
-      className={state =>
-        tab({ className: resolveClassName(className, state) })
-      }
+      className={state => tab({ className: cn({ className, state }) })}
     />
   )
 }
@@ -71,9 +63,7 @@ function TabsPanel({
   return (
     <TabsPrimitive.Panel
       {...props}
-      className={state =>
-        panel({ className: resolveClassName(className, state) })
-      }
+      className={state => panel({ className: cn({ className, state }) })}
     />
   )
 }

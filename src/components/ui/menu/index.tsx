@@ -1,4 +1,4 @@
-import { cn, resolveClassName } from "@/lib/utils"
+import { cn } from "@/lib/utils"
 import { VariantProps } from "tailwind-variants"
 
 import { buttonStyles } from "@/components/ui/button/styles"
@@ -46,7 +46,7 @@ function MenuTrigger({
         buttonStyles({
           size,
           variant,
-          className: resolveClassName(className, state)
+          className: cn({ className, state })
         })
       }
     >
@@ -87,7 +87,7 @@ function MenuPopup({
         sideOffset={sideOffset}
         className={state =>
           positioner({
-            className: resolveClassName(positionerProps?.className, state)
+            className: cn({ className: positionerProps?.className, state })
           })
         }
       >
@@ -95,7 +95,7 @@ function MenuPopup({
           {...props}
           className={state =>
             popup({
-              className: resolveClassName(className, state)
+              className: cn({ className, state })
             })
           }
         >
@@ -120,9 +120,7 @@ function MenuItem({
   return (
     <MenuPrimitive.Item
       {...props}
-      className={state =>
-        item({ className: resolveClassName(className, state) })
-      }
+      className={state => item({ className: cn({ className, state }) })}
     />
   )
 }
@@ -136,9 +134,7 @@ function MenuSeparator({
   return (
     <MenuPrimitive.Separator
       {...props}
-      className={state =>
-        separator({ className: resolveClassName(className, state) })
-      }
+      className={state => separator({ className: cn({ className, state }) })}
     />
   )
 }
@@ -154,9 +150,7 @@ function MenuGroupLabel({
   return (
     <MenuPrimitive.GroupLabel
       {...props}
-      className={state =>
-        groupLabel({ className: resolveClassName(className, state) })
-      }
+      className={state => groupLabel({ className: cn({ className, state }) })}
     />
   )
 }
@@ -174,7 +168,7 @@ function MenuRadioItem({
     <MenuPrimitive.RadioItem
       {...props}
       className={state =>
-        selectableItem({ className: resolveClassName(className, state) })
+        selectableItem({ className: cn({ className, state }) })
       }
     >
       {children}
@@ -196,7 +190,7 @@ function MenuCheckboxItem({
     <MenuPrimitive.CheckboxItem
       {...props}
       className={state =>
-        selectableItem({ className: resolveClassName(className, state) })
+        selectableItem({ className: cn({ className, state }) })
       }
     >
       {children}
@@ -220,7 +214,7 @@ function MenuSubmenuTrigger({
       className={state =>
         cn(
           selectableItem(),
-          submenuTrigger({ className: resolveClassName(className, state) })
+          submenuTrigger({ className: cn({ className, state }) })
         )
       }
     >

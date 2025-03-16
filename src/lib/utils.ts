@@ -1,17 +1,26 @@
-import { clsx, type ClassValue } from 'clsx'
-import { twMerge } from 'tailwind-merge'
+import { clsx, type ClassValue } from "clsx"
+import { twMerge } from "tailwind-merge"
 
-export function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs))
-}
-
-export function resolveClassName<T>(
-  className: string | ((state: T) => string) | undefined,
-  state: T
+export function cn<T>(
+  ...inputs: (
+    | ClassValue
+    | { className: string | ((state: T) => string); state: T }
+  )[]
 ) {
-  return className
-    ? typeof className === 'string'
-      ? className
-      : className(state)
-    : ''
+  return twMerge(
+    clsx(
+      inputs.map(input => {
+        if (
+          input !== null &&
+          typeof input === "object" &&
+          "className" in input
+        ) {
+          return typeof input.className === "string"
+            ? input.className
+            : input.className(input.state)
+        }
+        return input
+      })
+    )
+  )
 }

@@ -1,5 +1,5 @@
 import { fieldStyles } from "@/components/ui/field/styles"
-import { resolveClassName } from "@/lib/utils"
+import { cn } from "@/lib/utils"
 import { Field as FieldPrimitive } from "@base-ui-components/react/field"
 import { Fieldset as FieldsetPrimitive } from "@base-ui-components/react/fieldset"
 
@@ -19,7 +19,7 @@ function Field({
       {...props}
       className={state =>
         root({
-          className: resolveClassName(className, state)
+          className: cn({ className, state })
         })
       }
     />
@@ -37,7 +37,7 @@ function FieldLabel({
       {...props}
       className={state =>
         label({
-          className: resolveClassName(className, state)
+          className: cn({ className, state })
         })
       }
     />
@@ -55,7 +55,7 @@ function FieldDescription({
       {...props}
       className={state =>
         description({
-          className: resolveClassName(className, state)
+          className: cn({ className, state })
         })
       }
     />
@@ -73,7 +73,7 @@ function FieldError({
       {...props}
       className={state =>
         error({
-          className: resolveClassName(className, state)
+          className: cn({ className, state })
         })
       }
     />
@@ -95,7 +95,7 @@ function Fieldset({
       {...props}
       className={state =>
         fieldset({
-          className: resolveClassName(className, state)
+          className: cn({ className, state })
         })
       }
     />
@@ -113,7 +113,7 @@ function FieldsetLegend({
       {...props}
       className={state =>
         fieldsetLegend({
-          className: resolveClassName(className, state)
+          className: cn({ className, state })
         })
       }
     />

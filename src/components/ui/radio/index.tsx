@@ -1,5 +1,5 @@
 import { radioStyles } from "@/components/ui/radio/styles"
-import { resolveClassName } from "@/lib/utils"
+import { cn } from "@/lib/utils"
 import { Radio as RadioPrimitive } from "@base-ui-components/react/radio"
 import { RadioGroup as RadioGroupPrimitive } from "@base-ui-components/react/radio-group"
 import { VariantProps } from "tailwind-variants"
@@ -16,9 +16,7 @@ function Radio({
   return (
     <RadioGroupPrimitive
       {...props}
-      className={state =>
-        group({ className: resolveClassName(className, state) })
-      }
+      className={state => group({ className: cn({ className, state }) })}
     />
   )
 }
@@ -37,9 +35,7 @@ function RadioItem({
     <label className={label({ className: wrapperClassName })}>
       <RadioPrimitive.Root
         {...props}
-        className={state =>
-          item({ className: resolveClassName(className, state) })
-        }
+        className={state => item({ className: cn({ className, state }) })}
       >
         <RadioPrimitive.Indicator className={indicator()} />
       </RadioPrimitive.Root>

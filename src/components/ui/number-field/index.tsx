@@ -1,5 +1,5 @@
 import { numberFieldStyles } from "@/components/ui/number-field/styles"
-import { resolveClassName } from "@/lib/utils"
+import { cn } from "@/lib/utils"
 import { NumberField as NumberFieldPrimitive } from "@base-ui-components/react/number-field"
 import { MinusIcon, PlusIcon } from "lucide-react"
 
@@ -16,7 +16,7 @@ function NumberField({
       {...props}
       className={state =>
         root({
-          className: resolveClassName(className, state)
+          className: cn({ className, state })
         })
       }
     >

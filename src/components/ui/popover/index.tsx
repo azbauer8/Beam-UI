@@ -1,4 +1,4 @@
-import { resolveClassName } from "@/lib/utils"
+import { cn } from "@/lib/utils"
 import { VariantProps } from "tailwind-variants"
 
 import { buttonStyles } from "@/components/ui/button/styles"
@@ -29,7 +29,7 @@ function PopoverTrigger({
         buttonStyles({
           size,
           variant,
-          className: resolveClassName(className, state)
+          className: cn({ className, state })
         })
       }
     >
@@ -70,7 +70,7 @@ function PopoverPopup({
         sideOffset={sideOffset}
         className={state =>
           positioner({
-            className: resolveClassName(positionerProps?.className, state)
+            className: cn({ className: positionerProps?.className, state })
           })
         }
       >
@@ -78,7 +78,7 @@ function PopoverPopup({
           {...props}
           className={state =>
             popup({
-              className: resolveClassName(className, state)
+              className: cn({ className, state })
             })
           }
         >
@@ -105,7 +105,7 @@ function PopoverTitle({
       {...props}
       className={state =>
         title({
-          className: resolveClassName(className, state)
+          className: cn({ className, state })
         })
       }
     />
@@ -123,7 +123,7 @@ function PopoverDescription({
       {...props}
       className={state =>
         description({
-          className: resolveClassName(className, state)
+          className: cn({ className, state })
         })
       }
     />
@@ -146,7 +146,7 @@ function PopoverClose({
         buttonStyles({
           size,
           variant,
-          className: resolveClassName(className, state)
+          className: cn({ className, state })
         })
       }
     />

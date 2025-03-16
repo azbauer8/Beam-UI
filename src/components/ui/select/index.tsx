@@ -2,7 +2,7 @@ import { Select as SelectPrimitive } from "@base-ui-components/react/select"
 import { CheckIcon, ChevronDownIcon } from "lucide-react"
 
 import { selectStyles } from "@/components/ui/select/styles"
-import { resolveClassName } from "@/lib/utils"
+import { cn } from "@/lib/utils"
 
 const { item, popup, positioner, trigger, groupLabel, separator } =
   selectStyles()
@@ -27,7 +27,7 @@ function SelectTrigger({
       {...props}
       className={state =>
         trigger({
-          className: resolveClassName(className, state)
+          className: cn({ className, state })
         })
       }
     >
@@ -76,9 +76,7 @@ function SelectPopup({
       >
         <SelectPrimitive.ScrollUpArrow />
         <SelectPrimitive.Popup
-          className={state =>
-            popup({ className: resolveClassName(className, state) })
-          }
+          className={state => popup({ className: cn({ className, state }) })}
           {...props}
         >
           {children}
@@ -99,9 +97,7 @@ function SelectItem({
   return (
     <SelectPrimitive.Item
       {...props}
-      className={state =>
-        item({ className: resolveClassName(className, state) })
-      }
+      className={state => item({ className: cn({ className, state }) })}
     >
       <SelectPrimitive.ItemText>{children}</SelectPrimitive.ItemText>
       <SelectPrimitive.ItemIndicator>
@@ -120,9 +116,7 @@ function SelectGroupLabel({
   return (
     <SelectPrimitive.GroupLabel
       {...props}
-      className={state =>
-        groupLabel({ className: resolveClassName(className, state) })
-      }
+      className={state => groupLabel({ className: cn({ className, state }) })}
     />
   )
 }
@@ -136,9 +130,7 @@ function SelectSeparator({
   return (
     <SelectPrimitive.Separator
       {...props}
-      className={state =>
-        separator({ className: resolveClassName(className, state) })
-      }
+      className={state => separator({ className: cn({ className, state }) })}
     />
   )
 }

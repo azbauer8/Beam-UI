@@ -1,4 +1,4 @@
-import { resolveClassName } from "@/lib/utils"
+import { cn } from "@/lib/utils"
 import { Accordion as AccordionPrimitive } from "@base-ui-components/react/accordion"
 import { PlusIcon } from "lucide-react"
 import { accordionStyles } from "./styles"
@@ -14,9 +14,7 @@ function Accordion({
   return (
     <AccordionPrimitive.Root
       {...props}
-      className={state =>
-        root({ className: resolveClassName(className, state) })
-      }
+      className={state => root({ className: cn({ className, state }) })}
     />
   )
 }
@@ -30,9 +28,7 @@ function AccordionItem({
   return (
     <AccordionPrimitive.Item
       {...props}
-      className={state =>
-        item({ className: resolveClassName(className, state) })
-      }
+      className={state => item({ className: cn({ className, state }) })}
     />
   )
 }
@@ -49,7 +45,7 @@ function AccordionTrigger({
       {...props}
       className={state =>
         trigger({
-          className: resolveClassName(className, state)
+          className: cn({ className, state })
         })
       }
     >
@@ -68,9 +64,7 @@ function AccordionPanel({
   return (
     <AccordionPrimitive.Panel
       {...props}
-      className={state =>
-        panel({ className: resolveClassName(className, state) })
-      }
+      className={state => panel({ className: cn({ className, state }) })}
     />
   )
 }

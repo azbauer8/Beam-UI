@@ -1,4 +1,4 @@
-import { resolveClassName } from "@/lib/utils"
+import { cn } from "@/lib/utils"
 import { Tooltip as TooltipPrimitive } from "@base-ui-components/react/tooltip"
 import * as React from "react"
 import { tooltipStyles } from "./styles"
@@ -44,7 +44,7 @@ function TooltipPopup({
         {...mergedPositionerProps}
         className={state =>
           positioner({
-            className: resolveClassName(positionerProps?.className, state)
+            className: cn({ className: positionerProps?.className, state })
           })
         }
       >
@@ -52,7 +52,7 @@ function TooltipPopup({
           {...popupProps}
           className={state =>
             popup({
-              className: resolveClassName(popupProps?.className, state)
+              className: cn({ className: popupProps?.className, state })
             })
           }
         >

@@ -1,5 +1,5 @@
 import { scrollAreaStyles } from "@/components/ui/scroll-area/styles"
-import { resolveClassName } from "@/lib/utils"
+import { cn } from "@/lib/utils"
 import { ScrollArea as ScrollAreaPrimitive } from "@base-ui-components/react/scroll-area"
 import { VariantProps } from "tailwind-variants"
 
@@ -15,9 +15,7 @@ function ScrollArea({
   return (
     <ScrollAreaPrimitive.Root
       {...props}
-      className={state =>
-        root({ className: resolveClassName(className, state) })
-      }
+      className={state => root({ className: cn({ className, state }) })}
     >
       <ScrollAreaPrimitive.Viewport className={viewport()}>
         {props.children}

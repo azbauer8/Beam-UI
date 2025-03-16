@@ -1,6 +1,6 @@
 import { alertDialogStyles } from "@/components/ui/alert-dialog/styles"
 import { buttonStyles } from "@/components/ui/button/styles"
-import { resolveClassName } from "@/lib/utils"
+import { cn } from "@/lib/utils"
 import { AlertDialog as AlertDialogPrimitive } from "@base-ui-components/react/alert-dialog"
 import * as React from "react"
 import { VariantProps } from "tailwind-variants"
@@ -28,7 +28,7 @@ function AlertDialogTrigger({
         buttonStyles({
           size,
           variant,
-          className: resolveClassName(className, state)
+          className: cn({ className, state })
         })
       }
     />
@@ -48,7 +48,7 @@ function AlertDialogPopup({
         {...props}
         className={state =>
           popup({
-            className: resolveClassName(className, state)
+            className: cn({ className, state })
           })
         }
       />
@@ -81,7 +81,7 @@ function AlertDialogTitle({
       {...props}
       className={state =>
         title({
-          className: resolveClassName(className, state)
+          className: cn({ className, state })
         })
       }
     />
@@ -99,7 +99,7 @@ function AlertDialogDescription({
       {...props}
       className={state =>
         description({
-          className: resolveClassName(className, state)
+          className: cn({ className, state })
         })
       }
     />
@@ -150,7 +150,7 @@ function AlertDialogClose({
         buttonStyles({
           size,
           variant,
-          className: resolveClassName(className, state)
+          className: cn({ className, state })
         })
       }
     />

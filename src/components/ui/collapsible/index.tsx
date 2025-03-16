@@ -1,5 +1,5 @@
 import { collapsibleStyles } from "@/components/ui/collapsible/styles"
-import { resolveClassName } from "@/lib/utils"
+import { cn } from "@/lib/utils"
 import { Collapsible as CollapsiblePrimitive } from "@base-ui-components/react/collapsible"
 import { ChevronRightIcon } from "lucide-react"
 
@@ -14,9 +14,7 @@ function Collapsible({
   return (
     <CollapsiblePrimitive.Root
       {...props}
-      className={state =>
-        root({ className: resolveClassName(className, state) })
-      }
+      className={state => root({ className: cn({ className, state }) })}
     />
   )
 }
@@ -31,9 +29,7 @@ function CollapsibleTrigger({
   return (
     <CollapsiblePrimitive.Trigger
       {...props}
-      className={state =>
-        trigger({ className: resolveClassName(className, state) })
-      }
+      className={state => trigger({ className: cn({ className, state }) })}
     >
       <ChevronRightIcon className={chevron()} />
       {children}
@@ -53,9 +49,7 @@ function CollapsiblePanel({
   return (
     <CollapsiblePrimitive.Panel
       {...props}
-      className={state =>
-        panel({ className: resolveClassName(className, state) })
-      }
+      className={state => panel({ className: cn({ className, state }) })}
     >
       <div className={content({ className: contentClassName })}>{children}</div>
     </CollapsiblePrimitive.Panel>
