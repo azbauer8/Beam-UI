@@ -8,7 +8,7 @@ const buttonStyles = tv({
     // focus
     "focus-visible:ring focus-visible:outline-none",
     // disabled
-    "disabled:pointer-events-none disabled:opacity-50"
+    "disabled:bg-neutral2 disabled:pointer-events-none disabled:opacity-50"
   ],
   variants: {
     variant: {

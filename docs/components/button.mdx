@@ -5,6 +5,10 @@ description: An easily stylable button component.
 
 import { Button } from "@/components/ui/button"
 import { ComponentDemo, ComponentDemoPreview } from "@/docs/component-demo"
+import { CodeXml } from 'lucide-react'
+import { MailOpen } from "lucide-react"
+import { Loader2 } from "lucide-react"
+import Link from "next/link"
 
 <Tabs items={["Preview", "Code"]}>
   <ComponentDemoPreview>
@@ -165,6 +169,97 @@ import { Button } from "@/components/ui/button"
   export function ButtonDemo() {
     return (
       <Button variant="danger">Button</Button>
+    )
+  }
+  ```
+</Tabs>
+
+
+### Icon
+
+<Tabs items={["Preview", "Code"]}>
+  <ComponentDemoPreview>
+    <Button size="icon"><CodeXml /></Button>
+  </ComponentDemoPreview>
+  ```tsx tab="Code"
+  import { Button } from "@/components/ui/button"
+  import { CodeXml } from 'lucide-react'
+
+  export function ButtonDemo() {
+    return (
+      <Button size="icon"><CodeXml /></Button>
+    )
+  }
+  ```
+</Tabs>
+
+### With Icon
+
+<Tabs items={["Preview", "Code"]}>
+  <ComponentDemoPreview>
+    <Button>
+      <MailOpen />
+      Login with Email
+    </Button>
+  </ComponentDemoPreview>
+  ```tsx tab="Code"
+  import { Button } from "@/components/ui/button"
+  import { MailOpen } from "lucide-react"
+
+  export function ButtonDemo() {
+    return (
+      <Button>
+        <MailOpen />
+        Login with Email
+      </Button>
+    )
+  }
+  ```
+</Tabs>
+
+
+### Loading
+
+<Tabs items={["Preview", "Code"]}>
+  <ComponentDemoPreview>
+    <Button disabled>
+      <Loader2 className="animate-spin" />
+      Please wait
+    </Button>
+  </ComponentDemoPreview>
+  ```tsx tab="Code"
+  import { Button } from "@/components/ui/button"
+  import { Loader2 } from "lucide-react"
+
+  export function ButtonDemo() {
+    return (
+      <Button disabled>
+        <Loader2 className="animate-spin" />
+        Please wait
+      </Button>
+    )
+  }
+  ```
+</Tabs>
+
+
+### As Child
+
+<Tabs items={["Preview", "Code"]}>
+  <ComponentDemoPreview>
+    <Button asChild>
+      <Link href="#">Login</Link>
+    </Button>
+  </ComponentDemoPreview>
+  ```tsx tab="Code"
+  import { Button } from "@/components/ui/button"
+  import Link from "next/link"
+
+  export function ButtonDemo() {
+    return (
+      <Button asChild>
+        <Link href="#">Login</Link>
+      </Button>
     )
   }
   ```
