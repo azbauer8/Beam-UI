@@ -1,12 +1,16 @@
-import { clsx, type ClassValue } from "clsx"
+import { clsx } from "clsx"
 import { twMerge } from "tailwind-merge"
 
-export function cn<T>(
-  ...inputs: (
-    | ClassValue
-    | { className: string | ((state: T) => string); state: T }
-  )[]
-) {
+type ClassName<T> =
+  | string
+  | number
+  | bigint
+  | boolean
+  | { className: string | ((state: T) => string) | undefined; state: T }
+  | null
+  | undefined
+
+export function cn<T>(...inputs: (ClassName<T> | ClassName<T>[])[]) {
   return twMerge(
     clsx(
       inputs.map(input => {
